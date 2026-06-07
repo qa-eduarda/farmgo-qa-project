@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 const mockEvents = [
   {
@@ -40,8 +39,6 @@ const mockEvents = [
 ];
 
 function EventsPage() {
-  const { t } = useTranslation();
-
   return (
     <div className="events-page-wrapper bg-light min-vh-100">
       <section className="ud-page-banner">
@@ -49,7 +46,7 @@ function EventsPage() {
           <div className="row">
             <div className="col-lg-12">
               <div className="ud-banner-content">
-                <h1>{t('events_title')}</h1>
+                <h1>Eventos e Promoções</h1>
               </div>
             </div>
           </div>
@@ -58,7 +55,11 @@ function EventsPage() {
 
       <Container className="events-page-container py-5">
         <div className="text-center mb-5">
-          <p className="text-muted leading-relaxed events-intro-text">{t('events_description')}</p>
+          <p className="text-muted leading-relaxed events-intro-text">
+            Acompanhe os feirões, festivais e ofertas especiais lançadas diretamente pelos nossos
+            produtores locais. Apoie a agricultura familiar consumindo produtos de qualidade com
+            descontos incríveis.
+          </p>
         </div>
 
         <Row xs={1} md={2} lg={3} className="g-4 justify-content-center">
@@ -94,7 +95,7 @@ function EventsPage() {
                     to={`/perfil/${event.sellerId}`}
                     className="ud-main-btn mt-2 py-2 w-100 text-center text-white d-block event-card-btn"
                   >
-                    {t('view_seller_details')}
+                    Ver Detalhes do Vendedor
                   </Link>
                 </Card.Body>
               </Card>
