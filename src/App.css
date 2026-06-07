@@ -123,3 +123,11 @@
 .ud-footer .ud-widget li {
   color: #f3f4fe !important;
 }
+
+.ud-hero-image img {
+  border-radius: var(--border-radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+  max-height: 400px !important;
+  object-fit: cover !important;
+  width: 100% !important;
+}

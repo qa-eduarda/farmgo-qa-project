@@ -90,16 +90,9 @@ function LandingPage() {
                 </p>
               </div>
               <div className="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
-                <img src="/assets/images/hero/preview.webp" alt="hero-image" />
                 <img
-                  src="/assets/images/hero/dotted-shape.svg"
-                  alt="shape"
-                  className="shape shape-1"
-                />
-                <img
-                  src="/assets/images/hero/dotted-shape.svg"
-                  alt="shape"
-                  className="shape shape-2"
+                  src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=1200&h=600"
+                  alt="hero-image"
                 />
               </div>
             </div>
