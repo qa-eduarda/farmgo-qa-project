@@ -1,7 +1,5 @@
-/* src/pages/Shop/Shop.css */
-
 #ShopPage {
-  background-color: #f9fbf7 !important;
+  background-color: var(--bg-light) !important;
 }
 
 .shop-grid {
@@ -18,18 +16,30 @@
   align-items: stretch;
 }
 
-/* Custom styles for select elements in the filter bar */
 .form-select:focus {
-  border-color: #4b790e !important;
+  border-color: var(--primary-color) !important;
   box-shadow: 0 0 0 0.25rem rgba(75, 121, 14, 0.15) !important;
 }
 
-/* Custom card shadow hover effect */
 .card {
   transition: all 0.3s ease;
 }
 
-/* Responsive adjustments */
+.shop-filter-card {
+  border-radius: var(--border-radius-md) !important;
+}
+
+.shop-register-btn {
+  font-size: 14px;
+  border-radius: var(--border-radius-lg);
+  border: none;
+}
+
+.shop-no-results-icon {
+  font-size: 3rem;
+  color: #ccc;
+}
+
 @media (max-width: 575.98px) {
   .shop-grid {
     grid-template-columns: 1fr;

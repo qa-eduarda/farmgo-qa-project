@@ -5,22 +5,22 @@ import { useState } from 'react';
 import MockProducts from './MockProducts';
 
 function Shop() {
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState("0");
-  const [estadoSelecionado, setEstadoSelecionado] = useState("0");
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState('0');
+  const [estadoSelecionado, setEstadoSelecionado] = useState('0');
 
   const produtos = MockProducts();
 
   const filtrarProdutos = () => {
     return produtos.filter((produto) => {
-      const categoriaMatch = categoriaSelecionada === "0" || produto.category === categoriaSelecionada;
-      const estadoMatch = estadoSelecionado === "0" || produto.origin === estadoSelecionado;
+      const categoriaMatch =
+        categoriaSelecionada === '0' || produto.category === categoriaSelecionada;
+      const estadoMatch = estadoSelecionado === '0' || produto.origin === estadoSelecionado;
       return categoriaMatch && estadoMatch;
     });
   };
 
   return (
     <div id="ShopPage" className="bg-light min-vh-100">
-
       <section className="ud-page-banner">
         <div className="container">
           <div className="row">
@@ -33,15 +33,15 @@ function Shop() {
         </div>
       </section>
 
-
       <div className="container py-5">
-
         <div className="row mb-5 justify-content-center">
           <div className="col-lg-10">
-            <div className="card shadow-sm border-0 p-4" style={{ borderRadius: '15px' }}>
+            <div className="card shadow-sm border-0 p-4 shop-filter-card">
               <Form className="row g-3 align-items-center justify-content-between">
                 <div className="col-md-4">
-                  <Form.Label className="small text-muted mb-1 fw-bold">Filtrar por Estado</Form.Label>
+                  <Form.Label className="small text-muted mb-1 fw-bold">
+                    Filtrar por Estado
+                  </Form.Label>
                   <Form.Select
                     className="form-select rounded-pill px-3 py-2 border-secondary-subtle"
                     value={estadoSelecionado}
@@ -77,9 +77,11 @@ function Shop() {
                     <option value="Tocantins">Tocantins</option>
                   </Form.Select>
                 </div>
-                
+
                 <div className="col-md-4">
-                  <Form.Label className="small text-muted mb-1 fw-bold">Filtrar por Categoria</Form.Label>
+                  <Form.Label className="small text-muted mb-1 fw-bold">
+                    Filtrar por Categoria
+                  </Form.Label>
                   <Form.Select
                     className="form-select rounded-pill px-3 py-2 border-secondary-subtle"
                     value={categoriaSelecionada}
@@ -93,11 +95,7 @@ function Shop() {
                 </div>
 
                 <div className="col-md-3 text-md-end text-center pt-md-4">
-                  <button 
-                    type="button" 
-                    className="ud-main-btn py-2 px-4 w-100" 
-                    style={{ fontSize: '14px', borderRadius: '50px' }}
-                  >
+                  <button type="button" className="ud-main-btn py-2 px-4 w-100 shop-register-btn">
                     Quer se cadastrar?
                   </button>
                 </div>
@@ -105,7 +103,6 @@ function Shop() {
             </div>
           </div>
         </div>
-
 
         <div className="row justify-content-center">
           <div className="col-lg-10">
@@ -119,7 +116,7 @@ function Shop() {
               </div>
             ) : (
               <div className="text-center py-5">
-                <i className="bi bi-search" style={{ fontSize: '3rem', color: '#ccc' }}></i>
+                <i className="bi bi-search shop-no-results-icon"></i>
                 <h3 className="mt-3 text-muted">Nenhum parceiro encontrado</h3>
                 <p className="text-muted">Tente ajustar seus filtros de estado ou categoria.</p>
               </div>

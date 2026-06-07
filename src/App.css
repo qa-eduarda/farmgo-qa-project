@@ -1,11 +1,10 @@
-/* Force font family 'Inter' on the footer component and its text elements */
 .ud-footer,
 .ud-footer *,
 .ud-widget,
 .ud-widget-title,
 .ud-widget-desc,
 .ud-widget-links a {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-family) !important;
 }
 
 .App {
@@ -42,13 +41,11 @@
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
 }
 
-/* Custom Overrides */
 .ud-hero {
   padding-top: 100px !important;
 }
@@ -74,7 +71,6 @@
   margin: 0 auto !important;
 }
 
-
 @media (max-width: 767px) {
   .ud-hero {
     padding-top: 80px !important;
@@ -86,7 +82,6 @@
   }
 }
 
-/* Features Side-by-Side Layout */
 .ud-single-feature {
   display: flex !important;
   align-items: flex-start !important;
@@ -111,7 +106,6 @@
   line-height: 20px !important;
 }
 
-/* Compact Footer */
 .ud-footer {
   padding-top: 50px !important;
 }
@@ -122,4 +116,10 @@
 
 .ud-footer .ud-widget-title {
   margin-bottom: 20px !important;
+}
+
+.ud-footer .ud-widget-links a,
+.ud-footer .ud-widget p,
+.ud-footer .ud-widget li {
+  color: #f3f4fe !important;
 }

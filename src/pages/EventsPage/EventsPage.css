@@ -1,31 +1,62 @@
-/* src/pages/EventsPage/EventsPage.css */
-
 .events-page-wrapper {
-  background-color: #f9fbf7 !important;
+  background-color: var(--bg-light) !important;
 }
 
 .events-page-container {
   padding-bottom: 4rem;
 }
 
+.events-intro-text {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .event-card {
+  border-radius: var(--border-radius-md) !important;
+  overflow: hidden;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
 .event-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(75, 121, 14, 0.12) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.event-card-img-wrapper {
+  height: 220px;
+  overflow: hidden;
+}
+
+.event-card-img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  width: 100%;
 }
 
 .event-card:hover .event-card-img {
   transform: scale(1.05);
 }
 
-/* Specific styling for details */
-.event-card .card-title {
-  color: #2e3e1f !important;
+.event-card-title {
+  font-size: 1.2rem;
+  font-family: var(--font-family);
+  color: var(--heading-color) !important;
+}
+
+.event-card-desc {
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.event-card-btn {
+  font-size: 14px;
+  border-radius: var(--border-radius-lg);
+  border: none;
+  text-decoration: none;
 }
 
 .event-card .border-top {
-  border-top: 1px solid #f2f6ee !important;
+  border-top: 1px solid var(--border-color) !important;
 }

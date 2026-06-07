@@ -1,6 +1,5 @@
-
-import React, { useState } from "react";
-import './MarketCard.css'; 
+import React, { useState } from 'react';
+import './MarketCard.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
@@ -14,15 +13,17 @@ class MarketCard {
     this.origin = origin;
     this.img = img;
   }
-  
+
   render() {
-    return <MarketCardComponent 
-              id={this.id} 
-              name={this.name} 
-              category={this.category} 
-              origin={this.origin} 
-              img={this.img} 
-            />;
+    return (
+      <MarketCardComponent
+        id={this.id}
+        name={this.name}
+        category={this.category}
+        origin={this.origin}
+        img={this.img}
+      />
+    );
   }
 }
 
@@ -38,7 +39,7 @@ function MarketCardComponent({ id, name, category, origin, img }) {
     if (id) {
       navigate(`/perfil/${id}`);
     } else {
-      console.error("ID do vendedor não fornecido para navegação.");
+      console.error('ID do vendedor não fornecido para navegação.');
     }
   };
 
@@ -53,9 +54,7 @@ function MarketCardComponent({ id, name, category, origin, img }) {
           <p className="market-card-origin">
             <i className="bi bi-geo-alt-fill me-1"></i> {origin}
           </p>
-          <p className="market-card-category">
-            {category}
-          </p>
+          <p className="market-card-category">{category}</p>
         </Card.Body>
       </Card>
 
@@ -64,7 +63,17 @@ function MarketCardComponent({ id, name, category, origin, img }) {
           <Modal.Title>{name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={img} alt={name} style={{ width: '100%', marginBottom: '1.5rem', borderRadius: '12px', height: '250px', objectFit: 'cover' }} />
+          <img
+            src={img}
+            alt={name}
+            style={{
+              width: '100%',
+              marginBottom: '1.5rem',
+              borderRadius: '12px',
+              height: '250px',
+              objectFit: 'cover',
+            }}
+          />
           <div className="d-flex gap-2 mb-3">
             <span className="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill small">
               <i className="bi bi-tag-fill me-1"></i> Categoria: {category}
@@ -74,7 +83,9 @@ function MarketCardComponent({ id, name, category, origin, img }) {
             </span>
           </div>
           <p className="text-muted leading-relaxed" style={{ fontSize: '15px' }}>
-            Este é um produtor local cadastrado na rede FarmGo. Os produtos disponibilizados são frescos, colhidos de forma sustentável e entregues diretamente a você. Acesse o perfil completo para ver o catálogo detalhado e iniciar um chat.
+            Este é um produtor local cadastrado na rede FarmGo. Os produtos disponibilizados são
+            frescos, colhidos de forma sustentável e entregues diretamente a você. Acesse o perfil
+            completo para ver o catálogo detalhado e iniciar um chat.
           </p>
         </Modal.Body>
         <Modal.Footer>

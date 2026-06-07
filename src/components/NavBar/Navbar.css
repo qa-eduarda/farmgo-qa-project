@@ -1,7 +1,5 @@
-/* src/components/NavBar/Navbar.css */
-
 .navbar {
-  background-color: rgba(75, 121, 14, 0.95) !important; /* Verde agrícola com transparência */
+  background-color: rgba(75, 121, 14, 0.95) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 10px 0 !important;
@@ -19,13 +17,13 @@
 }
 
 .navBarLink {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family);
   font-size: 15px;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85) !important;
   padding: 8px 16px !important;
   transition: all 0.2s ease;
-  border-radius: 6px;
+  border-radius: var(--border-radius-sm);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -39,27 +37,26 @@
 }
 
 #navBarBtn {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: 15px;
   padding: 8px 24px;
-  color: #4b790e !important;
-  border-radius: 50px;
+  color: var(--primary-color) !important;
+  border-radius: var(--border-radius-lg);
   border: none;
   background-color: #ffffff !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   margin-left: 10px;
 }
 
 #navBarBtn:hover {
   background-color: #f4fbf0 !important;
-  color: #3b5f0a !important;
+  color: var(--primary-hover) !important;
   transform: translateY(-1px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
 }
 
-/* Ajustes para o menu sanduíche no mobile */
 .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.3) !important;
   background-color: rgba(255, 255, 255, 0.08) !important;
@@ -80,12 +77,12 @@
     align-items: flex-start !important;
     gap: 10px !important;
   }
-  
+
   .navBarLink {
     width: 100%;
     color: rgba(255, 255, 255, 0.9) !important;
   }
-  
+
   #navBarBtn {
     margin-left: 0;
     margin-top: 10px;

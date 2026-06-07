@@ -12,7 +12,6 @@ function LoginPage() {
     e.preventDefault();
     const newErrors = {};
 
-
     if (!email) {
       newErrors.email = 'O e-mail é obrigatório.';
     } else if (!/\S+@\S+\.\S+/.test(email)) {
@@ -41,7 +40,6 @@ function LoginPage() {
 
   return (
     <div className="login-page-wrapper">
-
       <section className="ud-page-banner">
         <div className="container">
           <div className="row">
@@ -62,16 +60,15 @@ function LoginPage() {
             <div className="col-lg-12">
               <div className="ud-login-wrapper mx-auto" style={{ maxWidth: '500px' }}>
                 <div className="ud-login-logo mb-4 text-center">
-                  <img src="/assets/images/logo/logo-2.svg" alt="logo" style={{ maxWidth: '150px' }} />
+                  <img
+                    src="/assets/images/logo/logo-2.svg"
+                    alt="logo"
+                    style={{ maxWidth: '150px' }}
+                  />
                 </div>
-                
 
                 {successMsg && (
-                  <div 
-                    className="alert alert-success" 
-                    role="alert" 
-                    data-testid="success-message"
-                  >
+                  <div className="alert alert-success" role="alert" data-testid="success-message">
                     {successMsg}
                   </div>
                 )}
@@ -93,7 +90,7 @@ function LoginPage() {
                       </div>
                     )}
                   </div>
-                  
+
                   <div className="ud-form-group mb-4">
                     <input
                       type="password"
@@ -110,11 +107,11 @@ function LoginPage() {
                       </div>
                     )}
                   </div>
-                  
+
                   <div className="ud-form-group mb-3">
-                    <button 
-                      type="submit" 
-                      className="ud-main-btn w-100" 
+                    <button
+                      type="submit"
+                      className="ud-main-btn w-100"
                       data-testid="login-submit-btn"
                     >
                       Entrar
@@ -126,17 +123,29 @@ function LoginPage() {
                   <p>Conectar com</p>
                   <ul className="d-flex justify-content-center list-unstyled gap-2 mt-2">
                     <li>
-                      <a href="#/" onClick={(e) => e.preventDefault()} className="facebook btn btn-outline-primary rounded-circle p-2">
+                      <a
+                        href="#/"
+                        onClick={(e) => e.preventDefault()}
+                        className="facebook btn btn-outline-primary rounded-circle p-2"
+                      >
                         <i className="lni lni-facebook-filled"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#/" onClick={(e) => e.preventDefault()} className="twitter btn btn-outline-info rounded-circle p-2">
+                      <a
+                        href="#/"
+                        onClick={(e) => e.preventDefault()}
+                        className="twitter btn btn-outline-info rounded-circle p-2"
+                      >
                         <i className="lni lni-twitter-filled"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#/" onClick={(e) => e.preventDefault()} className="google btn btn-outline-danger rounded-circle p-2">
+                      <a
+                        href="#/"
+                        onClick={(e) => e.preventDefault()}
+                        className="google btn btn-outline-danger rounded-circle p-2"
+                      >
                         <i className="lni lni-google"></i>
                       </a>
                     </li>
@@ -144,11 +153,22 @@ function LoginPage() {
                 </div>
 
                 <div className="text-center mt-3">
-                  <a className="forget-pass text-decoration-none text-muted small" href="#/" onClick={(e) => e.preventDefault()}>
+                  <a
+                    className="forget-pass text-decoration-none text-muted small"
+                    href="#/"
+                    onClick={(e) => e.preventDefault()}
+                  >
                     Esqueceu sua senha?
                   </a>
                   <p className="signup-option mt-3 mb-0 small">
-                    Ainda não possui conta? <a href="#/" onClick={(e) => e.preventDefault()} className="text-primary text-decoration-none fw-bold">Cadastre-se</a>
+                    Ainda não possui conta?{' '}
+                    <a
+                      href="#/"
+                      onClick={(e) => e.preventDefault()}
+                      className="text-primary text-decoration-none fw-bold"
+                    >
+                      Cadastre-se
+                    </a>
                   </p>
                 </div>
               </div>
@@ -156,9 +176,6 @@ function LoginPage() {
           </div>
         </div>
       </section>
-
-
-
     </div>
   );
 }
