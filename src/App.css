@@ -1,3 +1,13 @@
+/* Force font family 'Inter' on the footer component and its text elements */
+.ud-footer,
+.ud-footer *,
+.ud-widget,
+.ud-widget-title,
+.ud-widget-desc,
+.ud-widget-links a {
+  font-family: 'Inter', sans-serif !important;
+}
+
 .App {
   text-align: center;
 }
@@ -32,7 +42,84 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Custom Overrides */
+.ud-hero {
+  padding-top: 100px !important;
+}
+
+.ud-page-banner {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.ud-banner-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+.ud-banner-content h1 {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+
+@media (max-width: 767px) {
+  .ud-hero {
+    padding-top: 80px !important;
+  }
+
+  .ud-page-banner {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+/* Features Side-by-Side Layout */
+.ud-single-feature {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 20px !important;
+  margin-bottom: 40px !important;
+  text-align: left !important;
+}
+
+.ud-single-feature .ud-feature-icon {
+  margin-bottom: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.ud-single-feature .ud-feature-title {
+  margin-bottom: 6px !important;
+  font-size: 18px !important;
+}
+
+.ud-single-feature .ud-feature-desc {
+  margin-bottom: 0 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+}
+
+/* Compact Footer */
+.ud-footer {
+  padding-top: 50px !important;
+}
+
+.ud-widget {
+  margin-bottom: 25px !important;
+}
+
+.ud-footer .ud-widget-title {
+  margin-bottom: 20px !important;
 }

@@ -1,7 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function LandingPage() {
-  // Injetar estilos e scripts específicos da Landing Page ao montar, e remover ao desmontar
+  const [activeFaq, setActiveFaq] = useState(null);
+
+  const toggleFaq = (index) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
+
   useEffect(() => {
     const cssFiles = [
       '/assets/css/bootstrap.min.css',
@@ -19,7 +24,6 @@ function LandingPage() {
       return link;
     });
 
-    // Injetar o script wow.js
     const script = document.createElement('script');
     script.src = '/assets/js/wow.min.js';
     script.async = true;
@@ -34,7 +38,6 @@ function LandingPage() {
     };
     document.body.appendChild(script);
 
-    // Mostrar/esconder botão "back-to-top"
     const handleScroll = () => {
       const backToTop = document.querySelector('.back-to-top');
       if (backToTop) {
@@ -47,7 +50,6 @@ function LandingPage() {
     };
     window.addEventListener('scroll', handleScroll);
 
-    // Suavizar rolagem para links internos com hash
     const handleHashScroll = (e) => {
       const target = e.target.closest('a');
       if (target && target.hash && target.hash.startsWith('#')) {
@@ -61,13 +63,10 @@ function LandingPage() {
     document.addEventListener('click', handleHashScroll);
 
     return () => {
-      // Limpeza dos estilos
       linkElements.forEach(link => {
         if (link.parentNode) link.parentNode.removeChild(link);
       });
-      // Limpeza do script
       if (script.parentNode) script.parentNode.removeChild(script);
-      // Limpeza do listener de scroll e click
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('click', handleHashScroll);
     };
@@ -80,7 +79,7 @@ function LandingPage() {
 
   return (
     <div className="landing-page-wrapper">
-      {/* ====== Hero Start ====== */}
+
       <section className="ud-hero" id="home">
         <div className="container">
           <div className="row">
@@ -110,21 +109,18 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      {/* ====== Hero End ====== */}
 
-      {/* ====== Features Start ====== */}
       <section id="features" className="ud-features">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <div className="ud-section-title">
-                <span>Funcionalidades</span>
                 <h2>Nossas Funcionalidades</h2>
               </div>
             </div>
           </div>
           <div className="row">
-            <div className="col-xl-3 col-lg-3 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="ud-single-feature wow fadeInUp" data-wow-delay=".1s">
                 <div className="ud-feature-icon">
                   <i className="lni lni-pencil"></i>
@@ -137,7 +133,7 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-3 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="ud-single-feature wow fadeInUp" data-wow-delay=".15s">
                 <div className="ud-feature-icon">
                   <i className="lni lni-search"></i>
@@ -150,7 +146,7 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-3 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="ud-single-feature wow fadeInUp" data-wow-delay=".2s">
                 <div className="ud-feature-icon">
                   <i className="lni lni-coin"></i>
@@ -163,7 +159,7 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-3 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
                 <div className="ud-feature-icon">
                   <i className="lni lni-delivery"></i>
@@ -176,7 +172,7 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-3 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
                 <div className="ud-feature-icon">
                   <i className="lni lni-star"></i>
@@ -189,7 +185,7 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-3 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
                 <div className="ud-feature-icon">
                   <i className="lni lni-bubble"></i>
@@ -202,7 +198,7 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-3 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
                 <div className="ud-feature-icon">
                   <i className="lni lni-layout"></i>
@@ -215,7 +211,7 @@ function LandingPage() {
                 </div>
               </div>
             </div>
-            <div className="col-xl-3 col-lg-3 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="ud-single-feature wow fadeInUp" data-wow-delay=".25s">
                 <div className="ud-feature-icon">
                   <i className="lni lni-layout"></i>
@@ -231,9 +227,7 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      {/* ====== Features End ====== */}
 
-      {/* ====== About Start ====== */}
       <section id="about" class="ud-about">
         <div className="container">
           <div className="ud-about-wrapper wow fadeInUp" data-wow-delay=".2s">
@@ -257,9 +251,7 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      {/* ====== About End ====== */}
 
-      {/* ====== FAQ Start ====== */}
       <section id="faq" className="ud-faq">
         <div className="shape">
           <img src="/assets/images/faq/shape.svg" alt="shape" />
@@ -279,16 +271,15 @@ function LandingPage() {
               <div className="ud-single-faq wow fadeInUp" data-wow-delay=".1s">
                 <div className="accordion">
                   <button
-                    className="ud-faq-btn collapsed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
+                    className={`ud-faq-btn ${activeFaq === 1 ? '' : 'collapsed'}`}
+                    onClick={() => toggleFaq(1)}
                   >
                     <span className="icon flex-shrink-0">
                       <i className="lni lni-chevron-down"></i>
                     </span>
                     <span>Como funciona para acessar?</span>
                   </button>
-                  <div id="collapseOne" className="accordion-collapse collapse">
+                  <div id="collapseOne" className={`accordion-collapse collapse ${activeFaq === 1 ? 'show' : ''}`}>
                     <div className="ud-faq-body">
                       Você poderá criar uma conta como vendedor ou como consumidor em nosso aplicativo,
                       lá você coloca seus dados e informações principais para outros usuários saberem mais sobre você e o que você está buscando na plataforma.
@@ -299,16 +290,15 @@ function LandingPage() {
               <div className="ud-single-faq wow fadeInUp" data-wow-delay=".15s">
                 <div className="accordion">
                   <button
-                    className="ud-faq-btn collapsed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
+                    className={`ud-faq-btn ${activeFaq === 2 ? '' : 'collapsed'}`}
+                    onClick={() => toggleFaq(2)}
                   >
                     <span className="icon flex-shrink-0">
                       <i className="lni lni-chevron-down"></i>
                     </span>
                     <span>Como faço para adquirir o aplicativo?</span>
                   </button>
-                  <div id="collapseTwo" className="accordion-collapse collapse">
+                  <div id="collapseTwo" className={`accordion-collapse collapse ${activeFaq === 2 ? 'show' : ''}`}>
                     <div className="ud-faq-body">
                       Estamos ainda em construção e desenvolvimento.
                       Em breve nosso website e aplicativo completo poderá ser acessado na internet pelo computador ou celular.
@@ -319,16 +309,15 @@ function LandingPage() {
               <div className="ud-single-faq wow fadeInUp" data-wow-delay=".2s">
                 <div className="accordion">
                   <button
-                    className="ud-faq-btn collapsed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
+                    className={`ud-faq-btn ${activeFaq === 3 ? '' : 'collapsed'}`}
+                    onClick={() => toggleFaq(3)}
                   >
                     <span className="icon flex-shrink-0">
                       <i className="lni lni-chevron-down"></i>
                     </span>
                     <span>Preciso pagar para ter acesso?</span>
                   </button>
-                  <div id="collapseThree" className="accordion-collapse collapse">
+                  <div id="collapseThree" className={`accordion-collapse collapse ${activeFaq === 3 ? 'show' : ''}`}>
                     <div className="ud-faq-body">
                       Não, não precisa. No primeiro momento nosso aplicativo será gratuito e irá contar com as principais funcionalidades de graça para os usuários poderem desfrutar e testar.
                       No futuro iremos disponibilizar duas opções para os usuários: uma completa que será paga e irá apresentar mais funcionalidaes e contará com suporte e uma versão básica somente com as principais funcionalidades e de forma gratuita.
@@ -341,16 +330,15 @@ function LandingPage() {
               <div className="ud-single-faq wow fadeInUp" data-wow-delay=".1s">
                 <div className="accordion">
                   <button
-                    className="ud-faq-btn collapsed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFour"
+                    className={`ud-faq-btn ${activeFaq === 4 ? '' : 'collapsed'}`}
+                    onClick={() => toggleFaq(4)}
                   >
                     <span className="icon flex-shrink-0">
                       <i className="lni lni-chevron-down"></i>
                     </span>
                     <span>Como faço se quiser comprar algum produto?</span>
                   </button>
-                  <div id="collapseFour" className="accordion-collapse collapse">
+                  <div id="collapseFour" className={`accordion-collapse collapse ${activeFaq === 4 ? 'show' : ''}`}>
                     <div className="ud-faq-body">
                       Em nosso aplicativo será disponibilizado uma vitrine e um catálogo dos produtos adicionados pelos vendedores,
                       lá você terá fotos dos produtos e informações como preço, peso e data dos alimentos. Após selecionar o produto, colocar no carrinho, escolher o método de pagamento e a entrega,
@@ -362,16 +350,15 @@ function LandingPage() {
               <div className="ud-single-faq wow fadeInUp" data-wow-delay=".15s">
                 <div className="accordion">
                   <button
-                    className="ud-faq-btn collapsed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFive"
+                    className={`ud-faq-btn ${activeFaq === 5 ? '' : 'collapsed'}`}
+                    onClick={() => toggleFaq(5)}
                   >
                     <span className="icon flex-shrink-0">
                       <i className="lni lni-chevron-down"></i>
                     </span>
                     <span>Vou poder aceitar e realizar pagamentos das compras?</span>
                   </button>
-                  <div id="collapseFive" className="accordion-collapse collapse">
+                  <div id="collapseFive" className={`accordion-collapse collapse ${activeFaq === 5 ? 'show' : ''}`}>
                     <div className="ud-faq-body">
                       Não, não poderá. Somente agendar com o vendedor a data e o formato em que deseja pagar a mercadoria adquirida.
                     </div>
@@ -381,16 +368,15 @@ function LandingPage() {
               <div className="ud-single-faq wow fadeInUp" data-wow-delay=".2s">
                 <div className="accordion">
                   <button
-                    className="ud-faq-btn collapsed"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseSix"
+                    className={`ud-faq-btn ${activeFaq === 6 ? '' : 'collapsed'}`}
+                    onClick={() => toggleFaq(6)}
                   >
                     <span className="icon flex-shrink-0">
                       <i className="lni lni-chevron-down"></i>
                     </span>
                     <span>Como saber se o vendedor ou o comprador são confiáveis?</span>
                   </button>
-                  <div id="collapseSix" className="accordion-collapse collapse">
+                  <div id="collapseSix" className={`accordion-collapse collapse ${activeFaq === 6 ? 'show' : ''}`}>
                     <div className="ud-faq-body">
                       Nosso aplicativo contará com validação dos dados dos usuários cadastrados e com um sistema de avaliação e histórico de compras.
                       Vendedores e compradores poderão avaliar uns aos outros em fatores como, qualidade do produto, pontualidade, pagamento recebido, confiável e várias outras opções que servirão como base na hora de escolher os produtos e/ou aceitar a compra.
@@ -515,9 +501,7 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      {/* ====== Team End ====== */}
 
-      {/* ====== Contact Start ====== */}
       <section id="contact" className="ud-contact">
         <div className="container">
           <div className="row align-items-center">
@@ -603,63 +587,9 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      {/* ====== Contact End ====== */}
-
-      {/* ====== Footer Start ====== */}
-      <footer className="ud-footer wow fadeInUp" data-wow-delay=".15s">
-        <div className="shape shape-1">
-          <img src="/assets/images/footer/shape-1.svg" alt="shape" />
-        </div>
-        <div className="shape shape-2">
-          <img src="/assets/images/footer/shape-2.svg" alt="shape" />
-        </div>
-        <div className="shape shape-3">
-          <img src="/assets/images/footer/shape-3.svg" alt="shape" />
-        </div>
-        <div className="ud-footer-widgets">
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-3 col-lg-4 col-md-6">
-                <div className="ud-widget">
-                  <a href="/" className="ud-footer-logo">
-                    <img src="/assets/images/logo/logo.svg" alt="logo" />
-                  </a>
-                  <p className="ud-widget-desc">
-                    Nós conectamos produtores locais com os seus consumidores.
-                  </p>
-                </div>
-              </div>
-
-              <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6">
-                <div className="ud-widget">
-                  <h5 className="ud-widget-title">Sobre nós</h5>
-                  <ul className="ud-widget-links">
-                    <li>
-                      <a href="#home">Início</a>
-                    </li>
-                    <li>
-                      <a href="#features">Recursos</a>
-                    </li>
-                    <li>
-                      <a href="#about">Sobre</a>
-                    </li>
-                    <li>
-                      <a href="#contact">Contato</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-      {/* ====== Footer End ====== */}
-
-      {/* ====== Back To Top Start ====== */}
       <a href="/" className="back-to-top" onClick={handleBackToTop}>
         <i className="lni lni-chevron-up"> </i>
       </a>
-      {/* ====== Back To Top End ====== */}
     </div>
   );
 }

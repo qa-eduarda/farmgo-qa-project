@@ -1,53 +1,94 @@
-.bg-body-tertiary{
-    background-color: #4B790E !important;
+/* src/components/NavBar/Navbar.css */
+
+.navbar {
+  background-color: rgba(75, 121, 14, 0.95) !important; /* Verde agrícola com transparência */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: sticky !important;
+  top: 0;
+  z-index: 1050;
 }
 
-#logoImg{
-    height: 60px;
-    width: auto;
+#logoImg {
+  height: 48px;
+  width: auto;
+  transition: all 0.3s ease;
 }
 
 .navBarLink {
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
-    padding: 25px 8px;
-    position: relative;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85) !important;
+  padding: 8px 16px !important;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .navBarLink:hover {
-    color: rgb(184, 202, 180);
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
-#navBarLinks{
-    display: flex !important;
-    margin: auto;
-    align-items: center !important;
-    justify-items: center !important;
-    gap: 20px !important;
+#navBarLinks {
+  gap: 6px !important;
 }
 
 #navBarBtn {
-    text-align: center;
-    vertical-align: middle;
-    font-weight: 500;
-    font-size: 16px;
-    width: 100px;
-    color: white !important;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    color: var(--white);
-    cursor: pointer;
-    text-align: center;
-    vertical-align: center;
-    -webkit-transition: all 0.4s ease-out 0s;
-    transition: all 0.4s ease-out 0s;
-    background: #79a83c;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 24px;
+  color: #4b790e !important;
+  border-radius: 50px;
+  border: none;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  margin-left: 10px;
 }
 
 #navBarBtn:hover {
-    color: rgb(0, 0, 0) !important;
-    -webkit-transition: all 0.4s ease-out 0s;
-    transition: all 0.4s ease-out 0s;
-    background: #ffffff;
+  background-color: #f4fbf0 !important;
+  color: #3b5f0a !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Ajustes para o menu sanduíche no mobile */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  padding: 6px 10px !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.2) !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+@media (max-width: 991.98px) {
+  #navBarLinks {
+    padding: 15px 0 !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  
+  .navBarLink {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  #navBarBtn {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
 }

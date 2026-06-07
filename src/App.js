@@ -1,4 +1,4 @@
-// src/App.js
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -9,6 +9,7 @@ import SellerProfilePage from './pages/SellerProfilePage/SellerProfilePage.js';
 import LandingPage from './pages/LandingPage/LandingPage.js';
 import MapPage from './pages/MapPage/MapPage.js';
 import LoginPage from './pages/LoginPage/LoginPage.js';
+import Footer from './components/Footer/Footer.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/perfil/:vendedorId" element={<SellerProfilePage />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

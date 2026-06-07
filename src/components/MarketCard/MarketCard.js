@@ -44,14 +44,16 @@ function MarketCardComponent({ id, name, category, origin, img }) {
 
   return (
     <>
-      <Card id="MarketCard" style={{ width: '18rem' }} onClick={handleShowModal}>
-        <Card.Img id="marketPlaceImg" variant="top" src={img} alt={name} />
-        <Card.Body id='marketCardBody'>
-          <p id='marketPlaceText'> {name} </p>
-          <p id='marketOriginText'>
-            {origin}
+      <Card className="market-card shadow-sm h-100 border-0" onClick={handleShowModal}>
+        <div className="overflow-hidden" style={{ height: '200px' }}>
+          <Card.Img className="market-card-img" variant="top" src={img} alt={name} />
+        </div>
+        <Card.Body className="market-card-body">
+          <p className="market-card-title"> {name} </p>
+          <p className="market-card-origin">
+            <i className="bi bi-geo-alt-fill me-1"></i> {origin}
           </p>
-          <p id='marketCategoryText'>
+          <p className="market-card-category">
             {category}
           </p>
         </Card.Body>
@@ -62,16 +64,24 @@ function MarketCardComponent({ id, name, category, origin, img }) {
           <Modal.Title>{name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={img} alt={name} style={{ width: '100%', marginBottom: '1rem', borderRadius: '8px' }} />
-          <h5 id="categoryName"> Categoria: {category} </h5>
-          <h5 id="originName"> Origem: {origin} </h5>
-          <p id="productDescription"> Mais informações sobre o vendedor parceiro podem ser adicionadas aqui. </p>
+          <img src={img} alt={name} style={{ width: '100%', marginBottom: '1.5rem', borderRadius: '12px', height: '250px', objectFit: 'cover' }} />
+          <div className="d-flex gap-2 mb-3">
+            <span className="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill small">
+              <i className="bi bi-tag-fill me-1"></i> Categoria: {category}
+            </span>
+            <span className="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill small">
+              <i className="bi bi-geo-alt-fill me-1"></i> Origem: {origin}
+            </span>
+          </div>
+          <p className="text-muted leading-relaxed" style={{ fontSize: '15px' }}>
+            Este é um produtor local cadastrado na rede FarmGo. Os produtos disponibilizados são frescos, colhidos de forma sustentável e entregues diretamente a você. Acesse o perfil completo para ver o catálogo detalhado e iniciar um chat.
+          </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={handleCloseModal} id="closeBtn">
+          <Button onClick={handleCloseModal} id="closeBtn">
             Fechar
           </Button>
-          <Button variant="success" onClick={handleNavigateToProfile} id="verMaisBtn">
+          <Button onClick={handleNavigateToProfile} id="verMaisBtn">
             Ver Perfil do Vendedor
           </Button>
         </Modal.Footer>

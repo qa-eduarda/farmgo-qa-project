@@ -1,80 +1,31 @@
 /* src/pages/EventsPage/EventsPage.css */
+
+.events-page-wrapper {
+  background-color: #f9fbf7 !important;
+}
+
 .events-page-container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    min-height: calc(100vh - 120px); /* Ajuste 120px conforme a altura da sua navbar/footer */
-  }
-  
-  .page-title {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    color: #4B790E; /* Cor principal do seu tema */
-    font-weight: 700;
-    font-size: 2.5rem;
-  }
-  
-  .event-card {
-    margin-bottom: 1.5rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px; /* Bordas mais arredondadas */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    height: 100%; /* Para garantir que os cards na mesma linha tenham a mesma altura */
-  }
-  
-  .event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(75, 121, 14, 0.15); /* Sombra com cor do tema */
-  }
-  
-  .event-card .card-img-top {
-    border-top-left-radius: 9px; /* Ajuste para corresponder ao card */
-    border-top-right-radius: 9px;
-    height: 200px; /* Altura fixa para a imagem */
-    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
-  }
-  
-  .event-card .card-body {
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Faz o corpo do card crescer para preencher o espaço */
-  }
-  
-  .event-card .card-title {
-    color: #333;
-    font-weight: 600; /* Um pouco menos bold que o título da página */
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .event-card .card-subtitle {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 1rem;
-  }
-  
-  .event-card .card-text {
-    font-size: 0.95rem;
-    color: #444;
-    flex-grow: 1; /* Permite que o texto da descrição cresça */
-    margin-bottom: 1rem;
-  }
-  
-  .event-card .card-text small {
-      color: #777;
-  }
-  
-  .event-card .btn-primary {
-    background-color: #79a83c; /* Cor secundária do tema */
-    border-color: #79a83c;
-    font-weight: 500;
-    margin-top: auto; /* Empurra o botão para o final do card */
-  }
-  
-  .event-card .btn-primary:hover {
-    background-color: #689030;
-    border-color: #689030;
-  }
+  padding-bottom: 4rem;
+}
+
+.event-card {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(75, 121, 14, 0.12) !important;
+}
+
+.event-card:hover .event-card-img {
+  transform: scale(1.05);
+}
+
+/* Specific styling for details */
+.event-card .card-title {
+  color: #2e3e1f !important;
+}
+
+.event-card .border-top {
+  border-top: 1px solid #f2f6ee !important;
+}
