@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# FarmGo - Marketplace Agrícola
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O **FarmGo** é uma plataforma desenvolvida com o objetivo de conectar pequenos produtores locais a consumidores finais, promovendo a agricultura familiar e facilitando o acesso a produtos frescos e sustentáveis.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📖 Sobre o Projeto e Contexto
+
+Este portal foi criado como parte das atividades acadêmicas do curso de **Engenharia de Software da FIAP** (4º Semestre).
+
+### A Origem do Repositório Atual
+Inicialmente, o grupo desenvolveu **dois projetos paralelos e separados** que compartilhavam a mesma finalidade: dar vida ao ecossistema FarmGo. Com o avanço das disciplinas e a necessidade de preparar uma base estável para uma **futura etapa de testes de qualidade (QA e testes automatizados)**, as duas bases de código foram consolidadas e unificadas neste único repositório atual. 
+
+Esta unificação servirá como o projeto base definitivo para as práticas de controle de qualidade, validação de fluxos e testes de software.
+
+---
+
+## 🚀 Como Clonar e Rodar o Projeto Localmente
+
+Siga o passo a passo abaixo para colocar a aplicação para funcionar em sua máquina local.
+
+### 📋 Pré-requisitos
+Antes de começar, certifique-se de ter instalado em sua máquina:
+* **Node.js** (versão LTS recomendada)
+* **NPM** (instalado automaticamente junto com o Node) ou **Yarn**
+* **Git**
+
+### 1. Clonar o Repositório
+Abra o terminal em sua máquina e execute o comando abaixo para clonar este projeto:
+```bash
+git clone https://github.com/qa-eduarda/farmgo-qa-project.git
+```
+
+### 2. Acessar a Pasta do Projeto
+Navegue para o diretório que foi criado:
+```bash
+cd farmgo-qa-project
+```
+
+### 3. Instalar as Dependências
+Instale todos os pacotes e dependências necessárias listadas no `package.json`:
+```bash
+npm install
+```
+
+### 4. Executar a Aplicação em Modo de Desenvolvimento
+Para iniciar o servidor local de desenvolvimento, execute:
+```bash
+npm start
+```
+Após o processo de inicialização, a aplicação abrirá automaticamente no seu navegador padrão no endereço:
+👉 [http://localhost:3000](http://localhost:3000)
+
+Se o código for alterado, a página recarregará automaticamente no navegador. Os alertas de lint ou possíveis erros de compilação aparecerão no console do terminal.
+
+---
+
+## 🛠️ Scripts Disponíveis (Create React App)
+
+Este projeto foi inicializado utilizando o [Create React App](https://github.com/facebook/create-react-app). Abaixo estão os comandos padrões fornecidos pelo ecossistema do React para o gerenciamento do projeto:
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Executa o aplicativo em modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no navegador.
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inicia o executor de testes em modo de observação interativa (watch mode).\
+Consulte a documentação do Create React App sobre [execução de testes](https://facebook.github.io/create-react-app/docs/running-tests) para obter mais informações.
 
 ### `npm run build`
+Compila o aplicativo de forma otimizada para o ambiente de produção dentro da pasta `/build`.\
+O build é minificado e os nomes dos arquivos contêm hashes únicos para controle de cache. O projeto estará pronto para deploy!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Consulte a documentação do Create React App sobre [deploy em produção](https://facebook.github.io/create-react-app/docs/deployment) para mais informações.
 
 ### `npm run eject`
+> [!WARNING]
+> **Esta é uma operação sem volta! Uma vez executado o comando `eject`, você não poderá retornar ao estado anterior.**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Se você não estiver satisfeito com as configurações padrões e ferramentas de build pré-configuradas (Webpack, Babel, ESLint, etc.), você pode rodar este comando a qualquer momento. Ele removerá a dependência única de build do seu projeto e copiará todos os arquivos de configuração diretamente para a raiz do seu repositório para que você tenha controle total sobre eles.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📚 Saiba Mais
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Para aprender mais sobre as ferramentas utilizadas:
+* Documentação Oficial do [Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
+* Documentação Oficial do [React](https://reactjs.org/).
